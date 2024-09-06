@@ -2,6 +2,9 @@
 //import SignUp from "@/components/signUp/SignUp";
 import "@/index.css";
 //import ProtectedRoute from "@/layout/ProtectedRoute";
+//import Login from "@/components/login/Login";
+//import SignUp from "@/components/signUp/SignUp";
+//import ProtectedRoute from "@/layout/ProtectedRoute";
 import PublicRoute from "@/layout/PublicRoute";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import HomePage from "@/pages/HomePage";
