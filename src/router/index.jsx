@@ -1,12 +1,11 @@
-import Login from "@/components/login/Login";
-import SignUp from "@/components/signUp/SignUp";
-import ProtectedRoute from "@/layout/ProtectedRoute";
+//import Login from "@/components/login/Login";
+//import SignUp from "@/components/signUp/SignUp";
+import "@/index.css";
+//import ProtectedRoute from "@/layout/ProtectedRoute";
 import PublicRoute from "@/layout/PublicRoute";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import HomePage from "@/pages/HomePage";
-import SearchPage from "@/pages/SearchPage";
 import ProfilePage from "@/pages/ProfilePage";
-import MorePage from "@/pages/MorePage";
 import MenuPage from "@/pages/MenuPage"; 
 
 const router = createBrowserRouter([
@@ -26,26 +25,18 @@ const router = createBrowserRouter([
                 element: <MenuPage /> 
             },
             {
-                path: "/search",
-                element: <SearchPage />  
-            },
-            {
-                path: "/more",
-                element: <MorePage />  
-            },
-            {
                 path: "/profile",
-                element: <ProtectedRoute><ProfilePage /></ProtectedRoute>,
+                element: <ProfilePage />
             },
         ],
     },
     {
-        path: "/login",
-        element: <Login />,
+        //path: "/login",
+        //element: <Login />,
     },
     {
-        path: "/register",
-        element: <SignUp />
+        //path: "/register",
+        //element: <SignUp />
     }
 ]);
 
