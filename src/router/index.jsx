@@ -1,5 +1,9 @@
 //import Login from "@/components/login/Login";
 //import SignUp from "@/components/signUp/SignUp";
+import "@/index.css";
+//import ProtectedRoute from "@/layout/ProtectedRoute";
+//import Login from "@/components/login/Login";
+//import SignUp from "@/components/signUp/SignUp";
 import ProtectedRoute from "@/layout/ProtectedRoute";
 import PublicRoute from "@/layout/PublicRoute";
 import { createBrowserRouter, Navigate } from "react-router-dom";
@@ -25,7 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/profile",
-                element: <ProtectedRoute><ProfilePage /></ProtectedRoute>,
+                element: <ProfilePage />
             },
         ],
     },
@@ -34,7 +38,7 @@ const router = createBrowserRouter([
         //element: <Login />,
     },
     {
-       // path: "/register",
+        //path: "/register",
         //element: <SignUp />
     }
 ]);

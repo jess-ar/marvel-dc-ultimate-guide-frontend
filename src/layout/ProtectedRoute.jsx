@@ -1,8 +1,8 @@
-import { Navigate, Outlet } from 'react-router-dom';
+/*import { Navigate, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import jwtDecode from 'jwt-decode';
-import Navbar from '@/components/Navbar';
-import { ACCESS_TOKEN } from '@/constants';
+import Navbar from '@/components/navbar/Navbar';
+//import { ACCESS_TOKEN } from '@/constants';
 
 const ProtectedRoute = () => {
     const [isAuthorized, setIsAuthorized] = useState(null);
@@ -50,4 +50,4 @@ const ProtectedRoute = () => {
     }
 };
 
-export default ProtectedRoute;
+export default ProtectedRoute;*/
