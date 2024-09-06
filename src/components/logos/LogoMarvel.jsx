@@ -1,5 +1,5 @@
 const LogoMarvel = () => {
-    return <img src="/path-to-marvel-logo.png" alt="Marvel Logo" className="w-24 mx-4" />;
+    return <img src="/assets/images/MARVELlogo.webp" alt="Marvel Logo" className="object-contain w-40" />;
 };
 
 export default LogoMarvel;

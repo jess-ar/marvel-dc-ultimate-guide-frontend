@@ -1,6 +1,5 @@
-
 const LogoDc = () => {
-    return <img src="/path-to-dc-logo.png" alt="DC Logo" className="w-24 mx-4" />;
+    return <img src="/assets/images/DClogo.webp" alt="DC Logo" className="object-contain w-20 " />;
 };
 
 export default LogoDc;
