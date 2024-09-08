@@ -1,11 +1,20 @@
+import PropTypes from 'prop-types';
 
+const Button = ({ text, onClick }) => {
+    const baseStyle = 'w-[300px] h-[50px] px-6 py-2 rounded-full text-lg font-semibold focus:outline-none transition-all duration-300';
 
-const Button = () => {
+    const outlineHoverStyle = 'border border-red-600 text-white hover:bg-red-600 hover:text-secundary';
+
     return (
-        <div>
+        <button className={`${baseStyle} ${outlineHoverStyle}`} onClick={onClick}>
+            {text}
+        </button>
+    );
+};
 
-        </div>
-    )
-}
+Button.propTypes = {
+    text: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+};
 
 export default Button;

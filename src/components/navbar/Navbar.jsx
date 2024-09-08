@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <nav className="fixed bottom-0 flex justify-around w-full p-4 bg-background">
+        <nav className="fixed bottom-0 flex justify-around w-full p-4 bg-navbar">
 
             <NavLink
                 to="/home"

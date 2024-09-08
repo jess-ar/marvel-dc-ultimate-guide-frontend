@@ -1,15 +1,11 @@
-//import Login from "@/components/login/Login";
-//import SignUp from "@/components/signUp/SignUp";
 import "@/index.css";
-//import ProtectedRoute from "@/layout/ProtectedRoute";
-//import Login from "@/components/login/Login";
-//import SignUp from "@/components/signUp/SignUp";
-//import ProtectedRoute from "@/layout/ProtectedRoute";
 import PublicRoute from "@/layout/PublicRoute";
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import HomePage from "@/pages/HomePage";
-import ProfilePage from "@/pages/ProfilePage";
-import MenuPage from "@/pages/MenuPage"; 
+import HomePage from "@/pages/home/HomePage";
+import ProfilePage from "@/pages/profile/ProfilePage";
+import MenuPage from "@/pages/menu/MenuPage";
+import SignupPage from "@/pages/profile/SignupPage"; 
+import LoginPage from "@/pages/profile/LoginPage";  
 
 const router = createBrowserRouter([
     {
@@ -31,16 +27,16 @@ const router = createBrowserRouter([
                 path: "/profile",
                 element: <ProfilePage />
             },
+            {
+                path: "/signup",
+                element: <SignupPage /> 
+            },
+            {
+                path: "/login",
+                element: <LoginPage />  
+            },
         ],
     },
-    {
-        //path: "/login",
-        //element: <Login />,
-    },
-    {
-        //path: "/register",
-        //element: <SignUp />
-    }
 ]);
 
 export default router;
