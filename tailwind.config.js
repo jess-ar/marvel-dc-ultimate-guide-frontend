@@ -23,6 +23,8 @@ export default {
         primary: '#ED1B24',   
         secondary: '#FFFFFF',  
         background: '#000000', 
+        navbar: '#141313',
+        placeholder:'#AA9999',
       },
     },
   },
