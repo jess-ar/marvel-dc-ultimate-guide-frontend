@@ -1,4 +1,3 @@
-import "@/index.css";
 import PublicRoute from "@/layout/PublicRoute";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import HomePage from "@/pages/home/HomePage";

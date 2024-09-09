@@ -1,0 +1,47 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtualenv
+.venv/
+env/
+venv/
+
+# Django stuff:
+*.log
+db.sqlite3
+db.sqlite3-journal
+
+# Secrets
+.env
+
+# Static files (collected)
+staticfiles/
+
+# Media files
+media/
+
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build files
+build/
+dist/
+
+# Vite/React stuff
+.vite/
+.vite-cache/
+*.css.map
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
