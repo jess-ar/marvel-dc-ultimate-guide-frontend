@@ -42,6 +42,12 @@ const SignUpPage = () => {
             return;
         }
 
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
+        if (!passwordRegex.test(password)) {
+            setError('Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.');
+            return;
+        }
+
         try {
             const result = await registerUser(username, email, password);
             console.log(result);
