@@ -17,46 +17,53 @@ const SignUpPage = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    const validateForm = () => {
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
         if (!username || !email || !password) {
-            setError('All fields are required.');
-            return false;
+            setError('Please fill out all fields.');
+            return;
         }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            setError('Please enter a valid email.');
-            return false;
+            setError('Please enter a valid email address.');
+            return;
+        }
+
+        if (username.length < 3 || /\s/.test(username)) {
+            setError('Username must be at least 3 characters long and contain no spaces.');
+            ;
+            return;
         }
 
         if (password.length < 6) {
-            setError('Password must be at least 6 characters.');
-            return false;
+            setError('Password must be at least 6 characters long.');
+            return;
         }
-
-        setError('');
-        return true;
-    };
-
-    const handleRegister = async (e) => {
-        e.preventDefault(); // Evitamos que la página se recargue al hacer submit
-
-        if (!validateForm()) return;
 
         try {
             const result = await registerUser(username, email, password);
+            console.log(result);
+
             if (result.success) {
-                setMessage('User registered successfully');
+                setMessage('Account created successfully!');
                 console.log(result.data);
-                navigate('/login'); // Redirigir al login después del registro exitoso
+
+                setError('');
+                setUsername('');
+                setEmail('');
+                setPassword('');
+                navigate('/Login');
             } else {
-                setMessage(result.error || 'An error occurred during registration');
+                setError(result.error || 'An error occurred during registration');
             }
         } catch (error) {
-            setMessage('An unexpected error occurred.');
+            setError('An unexpected error occurred.');
             console.error(error);
         }
     };
+
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-background">
@@ -75,7 +82,7 @@ const SignUpPage = () => {
                     {error && <p className="mb-4 text-center text-primary">{error}</p>}
                     {message && <p className="mb-4 text-center text-green-500">{message}</p>}
 
-                    <form onSubmit={handleRegister}>
+                    <form onSubmit={handleLogin}>
                         <div className="mb-4">
                             <input
                                 type="text"
@@ -117,10 +124,9 @@ const SignUpPage = () => {
                             </button>
                         </div>
 
-                        {/* Botón de Sign up */}
                         <div className="flex justify-center mb-6">
-                            <Button
-                                type="submit" // Cambiamos a tipo submit
+                            <Button onClick={handleLogin}
+                                type="submit"
                                 text="Sign up"
                                 className="w-full py-2 font-semibold rounded-full text-secondary bg-primary hover:bg-red-700"
                             />

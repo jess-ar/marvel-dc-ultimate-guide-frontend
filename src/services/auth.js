@@ -1,15 +1,45 @@
 import axios from 'axios';
 
+
+const apiClient = axios.create({
+    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api/',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
+
+
 export const registerUser = async (username, email, password) => {
     try {
-        const response = await axios.post('http://localhost:8000/api/register', {
-            username,
-            email,
-            password,
-        });
-
+        const response = await apiClient.post('users/register/', { username, email, password });
         return { success: true, data: response.data };
     } catch (error) {
-        return { success: false, error: error.response?.data?.message || 'Registration failed' };
+        console.error("Error in registerUser:", error.response?.data || error.message);
+
+        if (error.response) {
+            return { success: false, error: error.response.data };
+        } else if (error.request) {
+            return { success: false, error: 'Network error. Please try again later.' };
+        } else {
+            return { success: false, error: 'An unexpected error occurred. Please try again.' };
+        }
+    }
+};
+
+
+export const loginUser = async (email, password) => {
+    try {
+        const response = await apiClient.post('/token/', { email, password });
+        return { success: true, data: response.data };
+    } catch (error) {
+        console.error("Error in loginUser:", error.response?.data || error.message);
+
+        if (error.response) {
+            return { success: false, error: error.response.data };
+        } else if (error.request) {
+            return { success: false, error: 'Network error. Please try again later.' };
+        } else {
+            return { success: false, error: 'An unexpected error occurred. Please try again.' };
+        }
     }
 };
