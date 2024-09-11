@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import LogoMarvel from '@/components/logos/LogoMarvel';
 import LogoDc from '@/components/logos/LogoDc';
-import Search from '@/components/Search/Search';
+import Search from '@/components/search/Search';
 
 
 import backgroundImage from '/assets/images/characters/marvel/escudo.jpg';
