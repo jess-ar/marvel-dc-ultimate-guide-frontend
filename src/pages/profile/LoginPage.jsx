@@ -53,18 +53,18 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-background">
+        <div className="flex items-center justify-center min-h-screen pt-11 bg-background">
             <div className="absolute top-4 left-4">
                 <ArrowBack onClick={() => navigate(-1)} />
             </div>
 
             <div className="relative flex flex-col items-center justify-start pb-40 w-[334px]">
-                <div className="flex flex-col items-center mb-8">
+                <div className="flex flex-col items-center mb-8 space-y-6">
                     <LogoMarvel className="mb-4 w-28 md:w-36 lg:w-48" />
                     <LogoDc className="w-20 md:w-24 lg:w-28" />
                 </div>
 
-                <h2 className="mt-2 mb-12 text-2xl font-bold text-center text-secondary">Login</h2>
+                <h2 className="w-full mt-2 mb-12 font-bold text-left text-md text-secondary">Login</h2>
                 <div className="relative w-full mb-1">
                     {error && <p className="mb-4 text-center text-primary">{error}</p>}
 
