@@ -1,17 +1,44 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faSearch } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Search = () => {
     const [query, setQuery] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     const handleInputChange = (event) => {
+        console.log('Typing: ', event.target.value); 
         setQuery(event.target.value);
     };
 
-    const handleSearch = (event) => {
+    const handleSearch = async (event) => {
         event.preventDefault();
-        console.log('Searching for:', query);
+        console.log('Search initiated with query:', query);  
+
+        if (!query) return;
+
+        setLoading(true);
+        setError(null);
+
+        try {
+            const response = await axios.get(`http://127.0.0.1:8000/api/characters/search/?search=${query}`);
+            console.log('Response from backend:', response.data);  
+
+            if (response.data.length > 0) {
+                navigate(`/CharacterDetails`, { state: { character: response.data[0] } });
+            } else {
+                setError("No se encontraron personajes.");
+            }
+        } catch (err) {
+            console.error('Error during search:', err);
+            setError(err.response?.data?.message || "Ocurrió un error al buscar personajes.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -24,7 +51,7 @@ const Search = () => {
                 <input
                     type="text"
                     value={query}
-                    onChange={handleInputChange}
+                    onChange={handleInputChange}  
                     placeholder="Search character"
                     className="w-full p-2 pl-10 font-sans text-black bg-gray-200 rounded-3xl focus:outline-none"
                 />
@@ -33,9 +60,12 @@ const Search = () => {
             <button
                 type="submit"
                 className="ml-3 w-[53px] h-[34px] text-secundary bg-primary rounded-3xl flex items-center justify-center"
+                disabled={loading} 
             >
                 <FontAwesomeIcon icon={faArrowRight} />
             </button>
+
+            {error && <p className="text-red-500">{error}</p>}
         </form>
     );
 };
