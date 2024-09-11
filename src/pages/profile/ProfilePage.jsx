@@ -1,6 +1,8 @@
 import Button from '@/components/button/Button';
 import { useNavigate } from 'react-router-dom';
-import backgroundImage from '/assets/images/characters/marvel/spider-back.jpg';
+
+const backgroundImage = '/assets/images/characters/marvel/spider-back.jpg';
+
 
 const ProfilePage = () => {
     const navigate = useNavigate();
