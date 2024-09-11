@@ -19,7 +19,6 @@ const HomePage = () => {
             <h1 className="mb-8 text-3xl text-center text-white font-protest">Marvel & DC: <br />
                 Definitive Guide</h1>
 
-            {/* Contenedor de los logos */}
             <div className="flex justify-center mb-8 space-x-8 place-items-center">
                 <div onClick={handleMarvelClick} className="cursor-pointer">
                     <LogoMarvel />

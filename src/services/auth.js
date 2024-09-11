@@ -29,7 +29,7 @@ export const registerUser = async (username, email, password) => {
 
 export const loginUser = async (email, password) => {
     try {
-        const response = await apiClient.post('/token/', { email, password });
+        const response = await apiClient.post('users/login/', { email, password }); 
         return { success: true, data: response.data };
     } catch (error) {
         console.error("Error in loginUser:", error.response?.data || error.message);
@@ -40,6 +40,23 @@ export const loginUser = async (email, password) => {
             return { success: false, error: 'Network error. Please try again later.' };
         } else {
             return { success: false, error: 'An unexpected error occurred. Please try again.' };
+        }
+    }
+};
+
+export const getUserProfile = async () => {
+    try {
+        const response = await apiClient.get('users/me/'); 
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching user profile:", error.response?.data || error.message);
+
+        if (error.response) {
+            throw new Error(error.response.data);
+        } else if (error.request) {
+            throw new Error('Network error. Please try again later.');
+        } else {
+            throw new Error('An unexpected error occurred. Please try again.');
         }
     }
 };
