@@ -1,13 +1,15 @@
-import Login from "@/components/login/Login";
-import SignUp from "@/components/signUp/SignUp";
-import ProtectedRoute from "@/layout/ProtectedRoute";
 import PublicRoute from "@/layout/PublicRoute";
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import HomePage from "@/pages/HomePage";
-import SearchPage from "@/pages/SearchPage";
-import ProfilePage from "@/pages/ProfilePage";
-import MorePage from "@/pages/MorePage";
-import MenuPage from "@/pages/MenuPage"; 
+import HomePage from "@/pages/home/HomePage";
+import ProfilePage from "@/pages/profile/ProfilePage";
+import UserProfilePage from "@/pages/profile/UserProfilePage"; 
+import MenuPage from "@/pages/menu/MenuPage";
+import SignupPage from "@/pages/profile/SignupPage"; 
+import LoginPage from "@/pages/profile/LoginPage";  
+import CharacterDetails from "@/pages/home/CharacterDetails";
+import MarvelPage from "@/pages/home/MarvelPage"; 
+import DcPage from "@/pages/home/DcPage"; 
+import AvengersTeamPage from '@/pages/home/AvengersTeamPage';
 
 const router = createBrowserRouter([
     {
@@ -26,26 +28,38 @@ const router = createBrowserRouter([
                 element: <MenuPage /> 
             },
             {
-                path: "/search",
-                element: <SearchPage />  
+                path: "/profile", 
+                element: <ProfilePage />
             },
             {
-                path: "/more",
-                element: <MorePage />  
+                path: "/signup",
+                element: <SignupPage /> 
             },
             {
-                path: "/profile",
-                element: <ProtectedRoute><ProfilePage /></ProtectedRoute>,
+                path: "/login",
+                element: <LoginPage />  
+            },
+            {
+                path: "/user/profile",  
+                element: <UserProfilePage /> 
+            },
+            {
+                path: "/CharacterDetails",
+                element: <CharacterDetails />
+            },
+            {
+                path: "/marvel",
+                element: <MarvelPage />
+            },
+            {
+                path: "/dc",
+                element: <DcPage />
+            },
+            {
+                path: '/teams/avengers',
+                element: <AvengersTeamPage />,
             },
         ],
-    },
-    {
-        path: "/login",
-        element: <Login />,
-    },
-    {
-        path: "/register",
-        element: <SignUp />
     }
 ]);
 
