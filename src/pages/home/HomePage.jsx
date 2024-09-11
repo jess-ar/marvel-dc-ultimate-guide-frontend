@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import LogoMarvel from '@/components/logos/LogoMarvel';
-import LogoDC from '@/components/logos/LogoDC';
+import LogoDc from '@/components/logos/LogoDc';
 import Search from '@/components/Search/Search';
-import backgroundImage from '/assets/images/characters/marvel/escudo.jpg'; 
+
+
+import backgroundImage from '/assets/images/characters/marvel/escudo.jpg';
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -17,7 +19,7 @@ const HomePage = () => {
 
     return (
         <div
-            className="relative flex flex-col items-center justify-between min-h-screen pt-16 pb-32 bg-center bg-cover"
+            className="relative flex flex-col items-center justify-between min-h-screen pt-4 pb-8 bg-center bg-cover"
             style={{
                 backgroundImage: `url(${backgroundImage})`, 
                 backgroundSize: 'cover',
@@ -42,7 +44,7 @@ const HomePage = () => {
                     </div>
 
                     <div onClick={handleDCClick} className="cursor-pointer">
-                        <LogoDC />
+                        <LogoDc />
                     </div>
                 </div>
 
