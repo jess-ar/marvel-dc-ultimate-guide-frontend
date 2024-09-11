@@ -2,7 +2,7 @@ import apiClient from '@/services/apiClient';
 
 export const getTeams = async () => {
     try {
-        const response = await apiClient.get('/teams/');
+        const response = await apiClient.get('/api/teams/');
         return response.data;
     } catch (error) {
         console.error('Error fetching teams:', error);
