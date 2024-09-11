@@ -33,7 +33,6 @@ const SignUpPage = () => {
 
         if (username.length < 3 || /\s/.test(username)) {
             setError('Username must be at least 3 characters long and contain no spaces.');
-            ;
             return;
         }
 
@@ -62,14 +61,13 @@ const SignUpPage = () => {
                 setPassword('');
                 navigate('/Login');
             } else {
-                setError(result.error || 'An error occurred during registration');
+                setError(result.error?.error || 'An error occurred during registration');
             }
         } catch (error) {
             setError('An unexpected error occurred.');
             console.error(error);
         }
     };
-
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-background">
@@ -85,7 +83,11 @@ const SignUpPage = () => {
 
                 <h2 className="mt-2 mb-12 text-2xl font-bold text-center text-secondary">Sign up</h2>
                 <div className="relative w-full mb-1">
-                    {error && <p className="mb-4 text-center text-primary">{error}</p>}
+                    {error && (
+                        <p className="mb-4 text-center text-primary">
+                            {typeof error === 'string' ? error : 'An error occurred'}
+                        </p>
+                    )}
                     {message && <p className="mb-4 text-center text-green-500">{message}</p>}
 
                     <form onSubmit={handleLogin}>
@@ -131,7 +133,7 @@ const SignUpPage = () => {
                         </div>
 
                         <div className="flex justify-center mb-6">
-                            <Button onClick={handleLogin}
+                            <Button
                                 type="submit"
                                 text="Sign up"
                                 className="w-full py-2 font-semibold rounded-full text-secondary bg-primary hover:bg-red-700"

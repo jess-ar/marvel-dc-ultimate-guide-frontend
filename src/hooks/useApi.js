@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { getCharacters, searchCharacter } from '@/services/api';
 
-const API_URL = 'https://api.example.com';
-
-const useApi = (endpoint) => {
+const useApi = (endpoint, query = '') => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -11,8 +9,14 @@ const useApi = (endpoint) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${API_URL}${endpoint}`);
-                setData(response.data);
+                let response;
+                if (endpoint === 'characters') {
+                    response = await getCharacters();
+                } else if (endpoint === 'search') {
+                    response = await searchCharacter(query);
+                }
+
+                setData(response);
             } catch (err) {
                 setError(err);
             } finally {
@@ -21,7 +25,7 @@ const useApi = (endpoint) => {
         };
 
         fetchData();
-    }, [endpoint]);
+    }, [endpoint, query]);
 
     return { data, loading, error };
 };
