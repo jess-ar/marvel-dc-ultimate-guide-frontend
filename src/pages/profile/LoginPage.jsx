@@ -40,8 +40,7 @@ const LoginPage = () => {
             console.log(result);
 
             if (result.success) {
-                setToken(result.data.accessToken);
-
+                setToken(result.data.access);
                 setError('');
                 navigate('/user/profile'); 
             } else {
@@ -105,7 +104,6 @@ const LoginPage = () => {
                                 type="submit"
                                 text="Login"
                                 className="w-full py-2 font-semibold rounded-full text-secondary bg-primary hover:bg-red-700"
-                                onClick={handleLogin}
                             />
                         </div>
 

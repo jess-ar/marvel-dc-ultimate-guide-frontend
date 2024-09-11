@@ -1,10 +1,8 @@
-import axios from 'axios';
-
-const API_URL = 'http://127.0.0.1:8000/api';
+import apiClient from '@/services/apiClient';
 
 export const getCharacters = async () => {
     try {
-        const response = await axios.get(`${API_URL}/characters/`);
+        const response = await apiClient.get('/characters/');
         return response.data;
     } catch (error) {
         console.error('Error fetching characters:', error);
@@ -14,7 +12,7 @@ export const getCharacters = async () => {
 
 export const searchCharacter = async (name) => {
     try {
-        const response = await axios.get(`${API_URL}/characters/search/?search=${name}`);
+        const response = await apiClient.get(`/characters/search/?search=${name}`);
         return response.data;
     } catch (error) {
         console.error('Error searching for character:', error);
