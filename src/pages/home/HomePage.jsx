@@ -25,7 +25,6 @@ const HomePage = () => {
                     <span className="mt-4 text-3xl sm:text-5xl md:text-5xl">Definitive guide</span>
                 </h1>
 
-                {/* Texto ajustado con menos negritas y mejor espaciado */}
                 <div className="max-w-2xl p-4 leading-relaxed text-left text-white" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)' }}>
                     <p className="mb-4 text-base sm:text-base">
                         <strong>Didn&apos;t know</strong> there&apos;s a <strong>Marvel world</strong> and a <strong>DC world</strong>? That there are two huge comic book giants? Don&apos;t worry, <strong>you&apos;re in the right place!</strong>
@@ -37,7 +36,6 @@ const HomePage = () => {
                         And if you already know your way around these vast universes, <strong>get ready to be amazed</strong> because this page is made for true fans. <strong>Dive in and enjoy! 🚀</strong>
                     </p>
                     
-                    {/* Posdata divertida */}
                     <p className="mt-6 text-xs leading-normal sm:text-sm">
                         <em>Psst...</em> You can <strong>search</strong> for your favorite hero using the search bar in the <strong>navbar</strong>, or check out the popular characters from both <strong>Marvel</strong> and <strong>DC</strong> in the menu! There’s so much to discover, <strong>have fun! 😎</strong>
                     </p>
