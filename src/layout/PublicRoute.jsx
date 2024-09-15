@@ -5,11 +5,12 @@ const PublicRoute = () => {
     return (
         <div className="flex flex-col justify-between min-h-screen bg-white">
             <div className="flex-grow">
+                <Navbar />
                 <Outlet />
             </div>
-            <Navbar className="md:order-first" />
         </div>
     );
 };
 
 export default PublicRoute;
+
