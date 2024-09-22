@@ -1,17 +1,34 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { NavLink } from 'react-router-dom';
-import Search from '@/components/search/Search'; 
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { NavLink, useNavigate } from 'react-router-dom';
+import Search from '@/components/search/Search';
 
 const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
+    const handleNavigation = (path) => {
+        navigate(path);
+        setMenuOpen(false);
+    };
+
     return (
         <nav className="fixed top-0 left-0 z-50 flex items-center justify-between w-full px-4 py-4 bg-background md:justify-center">
             
-            {/* Mobile Version (menu, home, search, login) */}
             <div className="flex items-center justify-between w-full h-full md:hidden">
-                {/* Menu Icon and Home Text */}
                 <div className="flex items-center">
-                    <FontAwesomeIcon icon={faBars} size="lg" className="mr-2 text-secondary" />
+                    <button onClick={toggleMenu} aria-label="Toggle menu">
+                        {menuOpen ? (
+                            <FontAwesomeIcon icon={faTimes} size="lg" className="mr-2 text-secondary" />
+                        ) : (
+                            <FontAwesomeIcon icon={faBars} size="lg" className="mr-2 text-secondary" />
+                        )}
+                    </button>
                     <NavLink
                         to="/home"
                         className={({ isActive }) => (isActive ? 'text-red-500 px-2 py-1 rounded flex items-center' : 'text-secondary hover:bg-navbar hover:text-white px-2 py-1 rounded flex items-center')}
@@ -20,12 +37,10 @@ const Navbar = () => {
                     </NavLink>
                 </div>
 
-                {/* Search for mobile */}
                 <div className="flex items-center">
                     <Search />
                 </div>
 
-                {/* Log In */}
                 <div className="flex items-center">
                     <NavLink
                         to="/login"
@@ -36,15 +51,58 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Desktop and Tablet Version (from 700px onwards) */}
+            {menuOpen && (
+                <div className="absolute left-0 w-56 rounded-br-lg shadow-lg top-full bg-navbar ">
+                    <ul className="flex flex-col items-start p-2 space-y-2">
+                        <li className="w-full"> 
+                            <button
+                                onClick={() => handleNavigation('/marvel')}
+                                className="block w-full px-4 py-2 text-left text-secondary hover:text-red-500"
+                            >
+                                Marvel
+                            </button>
+                        </li>
+                        <li className="w-full">
+                            <button
+                                onClick={() => handleNavigation('/dc')}
+                                className="block w-full px-4 py-2 text-left text-secondary hover:text-red-500"
+                            >
+                                DC
+                            </button>
+                        </li>
+                        <li className="w-full">
+                            <button
+                                onClick={() => handleNavigation('/about')}
+                                className="block w-full px-4 py-2 text-left text-secondary hover:text-red-500"
+                            >
+                                About
+                            </button>
+                        </li>
+                        <li className="w-full">
+                            <button
+                                onClick={() => handleNavigation('/profile')}
+                                className="block w-full px-4 py-2 text-left text-secondary hover:text-red-500"
+                            >
+                                Profile
+                            </button>
+                        </li>
+                        <li className="w-full">
+                            <button
+                                onClick={() => handleNavigation('/extras')}
+                                className="block w-full px-4 py-2 text-left text-secondary hover:text-red-500"
+                            >
+                                Extras
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            )}
+
             <div className="items-center justify-between hidden w-full h-full md:flex">
-                
-                {/* Search Component (on the left) */}
                 <div className="flex-1">
                     <Search />
                 </div>
 
-                {/* Navigation Links (centered) */}
                 <div className="flex justify-center flex-1 space-x-8">
                     <NavLink
                         to="/home"
@@ -72,7 +130,6 @@ const Navbar = () => {
                     </NavLink>
                 </div>
 
-                {/* Log In on the right */}
                 <div className="flex justify-end flex-1 mr-2">
                     <NavLink
                         to="/login"

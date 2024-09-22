@@ -28,7 +28,7 @@ const MarvelPage = () => {
                 <MarvelLogo />
             </div>
             
-            <h1 className="mb-4 text-xl text-center text-white font-protest">Popular Marvel Characters</h1>
+            <h2 className="mb-4 text-xl text-center text-white font-protest">Popular Marvel Characters</h2>
             <div className="grid grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-6">
                 {characters.map((character, index) => (
                     <CharacterCard key={index} image={character.image} name={character.name} />
