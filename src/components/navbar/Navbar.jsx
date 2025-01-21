@@ -29,12 +29,6 @@ const Navbar = () => {
                             <FontAwesomeIcon icon={faBars} size="lg" className="mr-2 text-secondary" />
                         )}
                     </button>
-                    <NavLink
-                        to="/home"
-                        className={({ isActive }) => (isActive ? 'text-red-500 px-2 py-1 rounded flex items-center' : 'text-secondary hover:bg-navbar hover:text-white px-2 py-1 rounded flex items-center')}
-                    >
-                        Home
-                    </NavLink>
                 </div>
 
                 <div className="flex items-center">
@@ -55,6 +49,12 @@ const Navbar = () => {
                 <div className="absolute left-0 w-56 rounded-br-lg shadow-lg top-full bg-navbar ">
                     <ul className="flex flex-col items-start p-2 space-y-2">
                         <li className="w-full"> 
+                        <button
+                                onClick={() => handleNavigation('/home')}
+                                className="block w-full px-4 py-2 text-left text-secondary hover:text-red-500"
+                            >
+                                Home
+                            </button>
                             <button
                                 onClick={() => handleNavigation('/marvel')}
                                 className="block w-full px-4 py-2 text-left text-secondary hover:text-red-500"
@@ -109,6 +109,18 @@ const Navbar = () => {
                         className={({ isActive }) => (isActive ? 'text-red-500 px-2 py-1 rounded flex items-center' : 'text-secondary hover:bg-navbar hover:text-white px-2 py-1 rounded flex items-center')}
                     >
                         Home
+                    </NavLink>
+                    <NavLink
+                        to="/marvel"
+                        className={({ isActive }) => (isActive ? 'text-red-500 px-2 py-1 rounded flex items-center' : 'text-secondary hover:bg-navbar hover:text-white px-2 py-1 rounded flex items-center')}
+                    >
+                        Marvel
+                    </NavLink>
+                    <NavLink
+                        to="/dc"
+                        className={({ isActive }) => (isActive ? 'text-red-500 px-2 py-1 rounded flex items-center' : 'text-secondary hover:bg-navbar hover:text-white px-2 py-1 rounded flex items-center')}
+                    >
+                        DC
                     </NavLink>
                     <NavLink
                         to="/about"

@@ -70,7 +70,7 @@ const SignUpPage = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen pt-11 bg-background">
+        <div className="flex items-center justify-center min-h-screen mt-10 pt-11 bg-background">
             <div className="absolute top-4 left-4">
                 <ArrowBack onClick={() => navigate(-1)} />
             </div>
