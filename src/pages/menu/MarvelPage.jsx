@@ -24,18 +24,18 @@ const MarvelPage = () => {
 
     return (
         <div className="min-h-screen px-4 pt-10 pb-32 bg-background">
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mt-20 mb-6">
                 <MarvelLogo />
             </div>
             
-            <h2 className="mb-4 text-xl text-center text-white font-protest">Popular Marvel Characters</h2>
-            <div className="grid grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-6">
+            <h2 className="mb-4 text-lg text-center text-white lg:text-xl font-protest">Popular Marvel Characters</h2>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-4 lg:grid-cols-6">
                 {characters.map((character, index) => (
                     <CharacterCard key={index} image={character.image} name={character.name} />
                 ))}
             </div>
 
-            <h2 className="mt-8 mb-4 text-xl text-center text-white font-protest">Popular Team</h2>
+            <h2 className="mt-8 text-lg text-center text-white lg:text-xl font-protest">Popular Team</h2>
             <div className="flex justify-center" onClick={handleTeamClick}>
                 <TeamCard image="/assets/images/teams/avengers.webp" teamName="Avengers" />
             </div>

@@ -24,20 +24,16 @@ const ProfilePage = () => {
             ></div>
 
             <div className="relative z-20 flex flex-col items-center justify-center mb-24 space-y-4">
-                <div className="w-64">
                     <Button
                         text="Signup"
                         className="w-full py-2 text-lg font-bold text-white bg-red-600 rounded-full hover:bg-red-700"
                         onClick={() => navigate('/signup')}
                     />
-                </div>
-                <div className="w-64">
                     <Button
                         text="Login"
                         className="w-full py-2 text-lg font-bold text-white bg-red-600 rounded-full hover:bg-red-700"
                         onClick={() => navigate('/login')}
                     />
-                </div>
             </div>
         </div>
     );
