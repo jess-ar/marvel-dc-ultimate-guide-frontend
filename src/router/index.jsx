@@ -1,5 +1,5 @@
 import PublicRoute from "@/layout/PublicRoute";
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import HomePage from "@/pages/home/HomePage";
 import ProfilePage from "@/pages/profile/ProfilePage";
 import UserProfilePage from "@/pages/profile/UserProfilePage";
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Navigate to='/home' /> 
+                element: <HomePage />
             },
             {
                 path: "/home",
