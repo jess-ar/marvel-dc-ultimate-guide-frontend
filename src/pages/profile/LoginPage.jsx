@@ -109,7 +109,7 @@ const LoginPage = () => {
 
                         <div className="w-full mt-6 mb-4 text-sm text-center text-secondary">
                             Do not have an account?{' '}
-                            <a href="/signup" className="text-primary hover:underline">
+                            <a onClick={() => navigate('/signup')} className="cursor-pointer text-primary hover:underline">
                                 Signup
                             </a>
                         </div>
