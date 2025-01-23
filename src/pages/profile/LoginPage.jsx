@@ -37,12 +37,11 @@ const LoginPage = () => {
 
         try {
             const result = await loginUser(email, password);
-            console.log(result);
 
             if (result.success) {
                 setToken(result.data.access);
                 setError('');
-                navigate('/user/profile'); 
+                navigate('/user/profile');
             } else {
                 setError('Invalid credentials');
             }
@@ -121,3 +120,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
