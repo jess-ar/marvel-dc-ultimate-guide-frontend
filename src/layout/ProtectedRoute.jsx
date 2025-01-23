@@ -1,13 +1,9 @@
-import { Outlet } from 'react-router-dom';
-import Navbar from '@/components/navbar/Navbar';
+import { Navigate, Outlet } from 'react-router-dom';
+import { getToken } from '@/services/storage';
 
 const ProtectedRoute = () => {
-    return (
-        <>
-            <Navbar />
-            <Outlet />
-        </>
-    );
+    const token = getToken();
+    return token ? <Outlet /> : <Navigate to="/login" />;
 };
 
 export default ProtectedRoute;

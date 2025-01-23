@@ -142,7 +142,7 @@ const SignUpPage = () => {
 
                         <div className="w-full mt-6 mb-4 text-sm text-center text-secondary">
                             Already have an account?{' '}
-                            <a href="/login" className="text-primary hover:underline">
+                            <a onClick={() => navigate('/login')} className="cursor-pointer text-primary hover:underline">
                                 Log in
                             </a>
                         </div>
