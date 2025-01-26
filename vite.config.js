@@ -10,9 +10,9 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   plugins: [react()],
   define: {
-    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'), // Usa process.env aquí
+    'process.env': {},
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
   },
-
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -24,8 +24,12 @@ export default defineConfig({
     setupFiles: './src/setupTests.js',
   },
   build: {
+    outDir: 'dist',
     rollupOptions: {
       input: './index.html',
     },
+    sourcemap: true,
+    chunkSizeWarningLimit: 500,
   },
+  base: '/',
 });
