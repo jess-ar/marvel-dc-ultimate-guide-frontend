@@ -56,7 +56,7 @@ const router = createBrowserRouter([
                 element: <AvengersTeamPage />,
             },
             {
-                path: "/teams/justice league",
+                path: "/teams/justice-league",
                 element: <JusticeLeagueTeamPage />,
             },
             {
