@@ -23,19 +23,19 @@ const DcPage = () => {
     };
 
     return (
-        <div className="min-h-screen px-4 pt-10 pb-32 bg-background">
+        <div className="min-h-screen pt-10 pb-32 bg-background">
             <div className="flex justify-center mt-20 mb-6">
                 <DcLogo />
             </div>
             
-            <h1 className="mb-4 text-lg text-center text-white lg:text-xl font-protest">Popular DC Characters</h1>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-4 lg:grid-cols-6">
+            <h1 className="mb-4 text-2xl text-center text-white lg:text-4xl font-bangers">Popular DC Characters</h1>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
                 {characters.map((character, index) => (
                     <CharacterCard key={index} image={character.image} name={character.name} />
                 ))}
             </div>
 
-            <h2 className="mt-8 text-lg text-center text-white lg:text-xl font-protest">Popular Team</h2>
+            <h2 className="mt-8 text-2xl text-center text-white lg:text-4xl font-bangers">Popular Team</h2>
             <div className="flex justify-center" onClick={handleTeamClick}>
                 <TeamCard image="/assets/images/teams/justice-league.png" teamName="Justice League" />
             </div>

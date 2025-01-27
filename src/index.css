@@ -1,31 +1,24 @@
+/* Importa Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  width: 100%; 
-  min-height: 100vh;
-}
-
-html, body {
-  height: 100%; 
-  overflow-y: auto;  
-}
-
-.custom-input {
-  @apply px-4 py-2 border border-gray-300 rounded-md;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Open-sans', sans-serif;
 }
 
 .custom-input::placeholder {
-  color: #999999;
+    color: #999999;
 }
 
 .custom-button:hover {
-  background-color: #C71F2D; 
+    background-color: #C71F2D;
 }
