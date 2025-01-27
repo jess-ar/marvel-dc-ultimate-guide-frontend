@@ -70,7 +70,7 @@ const SignUpPage = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen pt-11 bg-background">
+        <div className="flex items-center justify-center min-h-screen mt-10 pt-11 bg-background">
             <div className="absolute top-4 left-4">
                 <ArrowBack onClick={() => navigate(-1)} />
             </div>
@@ -142,7 +142,7 @@ const SignUpPage = () => {
 
                         <div className="w-full mt-6 mb-4 text-sm text-center text-secondary">
                             Already have an account?{' '}
-                            <a href="/login" className="text-primary hover:underline">
+                            <a onClick={() => navigate('/login')} className="cursor-pointer text-primary hover:underline">
                                 Log in
                             </a>
                         </div>

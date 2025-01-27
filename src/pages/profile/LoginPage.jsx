@@ -37,12 +37,11 @@ const LoginPage = () => {
 
         try {
             const result = await loginUser(email, password);
-            console.log(result);
 
             if (result.success) {
                 setToken(result.data.access);
                 setError('');
-                navigate('/user/profile'); 
+                navigate('/user/profile');
             } else {
                 setError('Invalid credentials');
             }
@@ -59,7 +58,7 @@ const LoginPage = () => {
             </div>
 
             <div className="relative flex flex-col items-center justify-start pb-40 w-[334px]">
-                <div className="flex flex-col items-center mb-8 space-y-6">
+                <div className="flex flex-col items-center mt-10 mb-8 space-y-6">
                     <LogoMarvel className="mb-4 w-28 md:w-36 lg:w-48" />
                     <LogoDc className="w-20 md:w-24 lg:w-28" />
                 </div>
@@ -109,7 +108,7 @@ const LoginPage = () => {
 
                         <div className="w-full mt-6 mb-4 text-sm text-center text-secondary">
                             Do not have an account?{' '}
-                            <a href="/signup" className="text-primary hover:underline">
+                            <a onClick={() => navigate('/signup')} className="cursor-pointer text-primary hover:underline">
                                 Signup
                             </a>
                         </div>
@@ -121,3 +120,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+

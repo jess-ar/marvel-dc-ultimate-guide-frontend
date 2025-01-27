@@ -1,66 +1,84 @@
 import PublicRoute from "@/layout/PublicRoute";
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import ProtectedRoute from "@/layout/ProtectedRoute";
+import { createBrowserRouter } from "react-router-dom";
 import HomePage from "@/pages/home/HomePage";
 import ProfilePage from "@/pages/profile/ProfilePage";
-import UserProfilePage from "@/pages/profile/UserProfilePage"; 
-import MenuPage from "@/pages/menu/MenuPage";
-import SignupPage from "@/pages/profile/SignupPage"; 
-import LoginPage from "@/pages/profile/LoginPage";  
+import UserProfilePage from "@/pages/profile/UserProfilePage";
+import SignupPage from "@/pages/profile/SignupPage";
+import LoginPage from "@/pages/profile/LoginPage";
 import CharacterDetails from "@/pages/home/CharacterDetails";
-import MarvelPage from "@/pages/home/MarvelPage"; 
-import DcPage from "@/pages/home/DcPage"; 
-import AvengersTeamPage from '@/pages/home/AvengersTeamPage';
+import MarvelPage from "@/pages/menu/MarvelPage";
+import DcPage from "@/pages/menu/DcPage";
+import AvengersTeamPage from '@/pages/menu/AvengersTeamPage';
+import AboutPage from '@/pages/menu/AboutPage';
+import ExtrasPage from '@/pages/menu/ExtrasPage';
+import JusticeLeagueTeamPage from "../pages/menu/JusticeLeagueTeamPage";
 
 const router = createBrowserRouter([
     {
+        path: "/",
         element: <PublicRoute />,
         children: [
             {
-                path: '/',
-                element: <Navigate to='/home' /> 
+                path: "/",
+                element: <HomePage />,
             },
             {
                 path: "/home",
-                element: <HomePage /> 
-            },
-            {
-                path: "/menu",
-                element: <MenuPage /> 
-            },
-            {
-                path: "/profile", 
-                element: <ProfilePage />
+                element: <HomePage />,
             },
             {
                 path: "/signup",
-                element: <SignupPage /> 
+                element: <SignupPage />,
             },
             {
                 path: "/login",
-                element: <LoginPage />  
+                element: <LoginPage />,
             },
             {
-                path: "/user/profile",  
-                element: <UserProfilePage /> 
+                path: "/profile",
+                element: <ProfilePage />,
             },
             {
-                path: "/CharacterDetails",
-                element: <CharacterDetails />
+                path: "/character-details",
+                element: <CharacterDetails />,
             },
             {
                 path: "/marvel",
-                element: <MarvelPage />
+                element: <MarvelPage />,
             },
             {
                 path: "/dc",
-                element: <DcPage />
+                element: <DcPage />,
             },
             {
-                path: '/teams/avengers',
+                path: "/teams/avengers",
                 element: <AvengersTeamPage />,
             },
+            {
+                path: "/teams/justice-league",
+                element: <JusticeLeagueTeamPage />,
+            },
+            {
+                path: "/about",
+                element: <AboutPage />,
+            },
+            {
+                path: "/extras",
+                element: <ExtrasPage />,
+            },
         ],
-    }
+    },
+    {
+        path: "/user",
+        element: <ProtectedRoute />,
+        children: [
+            {
+                path: "profile",
+                element: <UserProfilePage />,
+            },
+        ],
+    },
 ]);
 
 export default router;
