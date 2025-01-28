@@ -63,7 +63,7 @@ const Login = () => {
                     <LogoDc className="w-20 md:w-24 lg:w-28" />
                 </div>
 
-                <h2 className="w-full mt-2 mb-12 text-lg font-bold text-left font-bangers text-secondary">Login</h2>
+                <h2 className="w-full mt-2 mb-12 text-2xl text-left font--bold md:text-4xl font-bangers text-secondary">Login</h2>
                 <div className="relative w-full mb-1">
                     {error && <p className="mb-4 text-center text-primary">{error}</p>}
 

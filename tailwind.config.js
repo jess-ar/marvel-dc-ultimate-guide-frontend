@@ -14,13 +14,13 @@ export default {
       colors: {
         primary: '#ED1B24',
         secondary: '#FFFFFF',
-        terciary: '#007DBF',
+        terciary: '##0C518B',
         background: '#000000',
         navbar: '#21020B',
         placeholder: '#AA9999',
       },
       backgroundImage: {
-        navbarmobile: 'linear-gradient(180deg, #0072E4 0%, #002D70 100%)',
+        navbarmobile: 'linear-gradient(180deg, ##0C518B 0%, #002D70 100%)',
       },
     },
   },

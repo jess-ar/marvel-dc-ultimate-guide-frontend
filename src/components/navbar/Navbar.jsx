@@ -13,7 +13,8 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 z-50 w-full shadow-md h-14 bg-gradient-to-r from-red-600 via-black to-blue-600">
+        <nav className="fixed top-0 left-0 z-50 w-full shadow-md h-14 bg-[linear-gradient(to_right,#DC2626,#7A1317,#000000,#0C518B,#0291CD)]
+">
             <div className="flex items-center justify-between h-full max-w-5xl px-4 mx-auto">
                 {/* Mobile Navbar */}
                 <div className="flex items-center justify-between w-full h-full md:hidden">
@@ -111,8 +112,8 @@ const Navbar = () => {
                             to="/dc"
                             className={({ isActive }) =>
                                 isActive
-                                    ? 'text-blue-400 px-2 py-1 rounded font-bold'
-                                    : 'text-white hover:text-blue-400 px-2 py-1 rounded transition-all'
+                                    ? 'text-[#007DBF] px-2 py-1 rounded font-bold'
+                                    : 'text-white hover:text-[#007DBF] px-2 py-1 rounded transition-all'
                             }
                         >
                             DC
@@ -140,7 +141,7 @@ const Navbar = () => {
                     </div>
                     <NavLink
                         to="/welcome"
-                        className="text-white transition-all rounded ml-72 hover:text-gray-300"
+                        className="text-white transition-all rounded md:ml-28 lg:ml-72 hover:text-gray-300"
                     >
                         Log In
                     </NavLink>

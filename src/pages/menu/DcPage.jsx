@@ -5,7 +5,7 @@ import DcLogo from '@/components/logos/LogoDc';
 
 const DcPage = () => {
     const navigate = useNavigate();
-    
+
     const characters = [
         { image: '/assets/images/characters/dc/aquaman.webp', name: 'Aquaman' },
         { image: '/assets/images/characters/dc/black-adam.webp', name: 'Black Adam' },
@@ -27,13 +27,19 @@ const DcPage = () => {
             <div className="flex justify-center mt-20 mb-6">
                 <DcLogo />
             </div>
-            
+
             <h1 className="mb-4 text-2xl text-center text-white lg:text-4xl font-bangers">Popular DC Characters</h1>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
                 {characters.map((character, index) => (
-                    <CharacterCard key={index} image={character.image} name={character.name} />
+                    <CharacterCard
+                        key={index}
+                        image={character.image}
+                        name={character.name}
+                        franchise="dc" 
+                    />
                 ))}
             </div>
+
 
             <h2 className="mt-8 text-2xl text-center text-white lg:text-4xl font-bangers">Popular Team</h2>
             <div className="flex justify-center" onClick={handleTeamClick}>
