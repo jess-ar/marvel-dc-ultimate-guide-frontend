@@ -2,30 +2,19 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-const resources = {
-    en: {
-        translation: {
-            welcome: "Welcome to Your Profile",
-            description: "Explore your personalized space in the Marvel/DC app. Log in to access your favorite heroes and manage your profile.",
-            marvel: "Explore Marvel",
-            dc: "Explore DC",
-        },
-    },
-    es: {
-        translation: {
-            welcome: "Bienvenido a Tu Perfil",
-            description: "Explora tu espacio personalizado en la aplicación Marvel/DC. Inicia sesión para acceder a tus héroes favoritos y gestionar tu perfil.",
-            marvel: "Explorar Marvel",
-            dc: "Explorar DC",
-        },
-    },
-};
+import enTranslation from './locales/en/translation.json';
+import esTranslation from './locales/es/translation.json';
+import frTranslation from './locales/fr/translation.json';
 
 i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        resources,
+        resources: {
+            en: { translation: enTranslation },
+            es: { translation: esTranslation },
+            fr: { translation: frTranslation }
+        },
         fallbackLng: 'en',
         interpolation: {
             escapeValue: false,

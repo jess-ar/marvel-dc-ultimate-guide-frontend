@@ -1,0 +1,21 @@
+{
+    "home": {
+        "title": "Definitive Guide",
+        "intro": "Welcome to the ultimate arena where Marvel's heroes and DC's legends collide. Whether you root for Gotham's protector or a web-slinging genius, this is where it all comes together.",
+        "description1": "Discover the stories, rivalries, and epic tales that shaped two of the greatest universes in pop culture. Heroes, villains, and everything in between await you here.",
+        "description2": "New to the multiverse? No problem. A seasoned fan? Get ready for some surprises. This guide is your portal to everything Marvel and DC—one click, and you're in.",
+        "tip": "Pro tip: Use the search bar above to find your favorite character or explore the menus to see what each universe has to offer. Time to gear up, hero!",
+        "exploreMarvel": "Explore Marvel",
+        "exploreDC": "Explore DC"
+    },
+    "footer": {
+        "copyright": "© 2024 Marvel & DC Ultimate Guide",
+        "disclaimer": "Fan-made project for practice and learning."
+    },
+    "profile_welcome": {
+        "title": "Welcome to Your Profile",
+        "description": "Explore your personalized space in the Marvel/DC app. Log in to access your favorite heroes and manage your profile.",
+        "signup_button": "Signup",
+        "login_button": "Login"
+    }
+}

@@ -30,10 +30,15 @@ const MarvelPage = () => {
             
             <h2 className="mb-4 text-2xl text-center text-white lg:text-4xl font-bangers">Popular Marvel Characters</h2>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-                {characters.map((character, index) => (
-                    <CharacterCard key={index} image={character.image} name={character.name} />
-                ))}
-            </div>
+                            {characters.map((character, index) => (
+                                <CharacterCard
+                                    key={index}
+                                    image={character.image}
+                                    name={character.name}
+                                    franchise="marvel" 
+                                />
+                            ))}
+                        </div>
 
             <h2 className="mt-8 text-2xl text-center text-white lg:text-4xl font-bangers">Popular Team</h2>
             <div className="flex justify-center" onClick={handleTeamClick}>
