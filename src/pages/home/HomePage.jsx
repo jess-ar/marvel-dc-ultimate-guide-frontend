@@ -26,13 +26,13 @@ const HomePage = () => {
                 
                 <section className="flex items-center justify-center mt-8 space-x-4 text-sm lg:text-lg">
                     <button
-                        className="px-4 py-2 font-bold transition-transform transform bg-red-600 rounded-full shadow-lg md:px-6 md:py-3 hover:bg-red-700 hover:scale-105"
+                        className="px-4 py-3 font-bold transition-transform transform bg-red-600 rounded-full shadow-lg md:px-6 md:py-3 hover:bg-red-700 hover:scale-105"
                         onClick={() => window.location.href = '/marvel'}
                     >
                         {t("home.exploreMarvel")}
                     </button>
                     <button
-                        className="px-4 py-2 font-bold transition-transform transform bg-[#007DC0] rounded-full shadow-lg md:px-6 md:py-3 hover:bg-[#0C518B] hover:scale-105"
+                        className="px-4 py-3 font-bold transition-transform transform bg-[#007DC0] rounded-full shadow-lg md:px-6 md:py-3 hover:bg-[#0C518B] hover:scale-105"
                         onClick={() => window.location.href = '/dc'}
                     >
                         {t("home.exploreDC")}

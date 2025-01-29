@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 const backgroundImage = '/assets/images/characters/marvel/spider-back.jpg';
 
 const ProfileWelcome = () => {
-    const { t } = useTranslation(); // Para la traducción
+    const { t } = useTranslation();
     const navigate = useNavigate();
 
     useEffect(() => {
