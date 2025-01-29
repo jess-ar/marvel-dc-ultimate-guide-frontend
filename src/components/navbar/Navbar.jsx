@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -7,14 +7,37 @@ import Search from '@/components/search/Search';
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const navigate = useNavigate();
+    const menuRef = useRef(null);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
 
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
+
+    // Cerrar menú al hacer clic fuera de él
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                closeMenu();
+            }
+        };
+
+        if (menuOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [menuOpen]);
+
     return (
-        <nav className="fixed top-0 left-0 z-50 w-full shadow-md h-14 bg-[linear-gradient(to_right,#DC2626,#7A1317,#000000,#0C518B,#0291CD)]
-">
+        <nav className="fixed top-0 left-0 z-50 w-full shadow-md h-14 bg-[linear-gradient(to_right,#DC2626,#7A1317,#000000,#0C518B,#0291CD)]">
             <div className="flex items-center justify-between h-full max-w-5xl px-4 mx-auto">
                 {/* Mobile Navbar */}
                 <div className="flex items-center justify-between w-full h-full md:hidden">
@@ -29,8 +52,12 @@ const Navbar = () => {
                         <Search />
                     </div>
                     <NavLink
-                        to="/login"
-                        className="px-2 py-1 text-white transition-all rounded hover:text-gray-300"
+                        to="/welcome"
+                        className={({ isActive }) =>
+                            isActive
+                                ? 'text-black px-2 py-1 rounded font-bold md:ml-28 lg:ml-72'
+                                : 'text-white hover:text-slate-950 px-2 py-1 rounded transition-all md:ml-28 lg:ml-72'
+                        }
                     >
                         Log In
                     </NavLink>
@@ -38,17 +65,26 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
                 {menuOpen && (
-                    <div className="absolute left-0 w-56 rounded-br-lg shadow-lg top-full bg-navbarmobile">
+                    <div
+                        ref={menuRef}
+                        className="absolute left-0 w-56 rounded-br-lg shadow-lg top-full bg-[linear-gradient(to_right,#0C518B,#0291CD)]"
+                    >
                         <ul className="flex flex-col items-start p-2 space-y-2">
                             <li>
                                 <button
-                                    onClick={() => navigate('/home')}
+                                    onClick={() => {
+                                        navigate('/home');
+                                        closeMenu();
+                                    }}
                                     className="block w-full px-4 py-2 text-left text-white transition-all hover:text-gray-300"
                                 >
                                     Home
                                 </button>
                                 <button
-                                    onClick={() => navigate('/marvel')}
+                                    onClick={() => {
+                                        navigate('/marvel');
+                                        closeMenu();
+                                    }}
                                     className="block w-full px-4 py-2 text-left text-white transition-all hover:text-gray-300"
                                 >
                                     Marvel
@@ -56,7 +92,10 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <button
-                                    onClick={() => navigate('/dc')}
+                                    onClick={() => {
+                                        navigate('/dc');
+                                        closeMenu();
+                                    }}
                                     className="block w-full px-4 py-2 text-left text-white transition-all hover:text-gray-300"
                                 >
                                     DC
@@ -64,7 +103,10 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <button
-                                    onClick={() => navigate('/about')}
+                                    onClick={() => {
+                                        navigate('/about');
+                                        closeMenu();
+                                    }}
                                     className="block w-full px-4 py-2 text-left text-white transition-all hover:text-gray-300"
                                 >
                                     About
@@ -72,7 +114,10 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <button
-                                    onClick={() => navigate('/extras')}
+                                    onClick={() => {
+                                        navigate('/extras');
+                                        closeMenu();
+                                    }}
                                     className="block w-full px-4 py-2 text-left text-white transition-all hover:text-gray-300"
                                 >
                                     Extras
@@ -141,7 +186,11 @@ const Navbar = () => {
                     </div>
                     <NavLink
                         to="/welcome"
-                        className="text-white transition-all rounded md:ml-28 lg:ml-72 hover:text-gray-300"
+                        className={({ isActive }) =>
+                            isActive
+                                ? 'text-black px-2 py-1 rounded font-bold md:ml-28 lg:ml-72'
+                                : 'text-white hover:text-slate-950 px-2 py-1 rounded transition-all md:ml-28 lg:ml-72'
+                        }
                     >
                         Log In
                     </NavLink>

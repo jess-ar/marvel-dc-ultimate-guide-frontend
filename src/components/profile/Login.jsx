@@ -63,7 +63,7 @@ const Login = () => {
                     <LogoDc className="w-20 md:w-24 lg:w-28" />
                 </div>
 
-                <h2 className="w-full mt-2 mb-12 text-2xl text-left font--bold md:text-4xl font-bangers text-secondary">Login</h2>
+                <h2 className="w-full mt-2 mb-12 text-2xl text-left font--bold md:text-4xl font-bangers text-secondary">Log In</h2>
                 <div className="relative w-full mb-1">
                     {error && <p className="mb-4 text-center text-primary">{error}</p>}
 
@@ -101,7 +101,7 @@ const Login = () => {
                         <div className="flex justify-center mb-6">
                             <Button
                                 type="submit"
-                                text="Login"
+                                text="Log In"
                                 className="w-full py-2 font-semibold rounded-full text-secondary bg-primary hover:bg-red-700"
                             />
                         </div>
@@ -109,7 +109,7 @@ const Login = () => {
                         <div className="w-full mt-6 mb-4 text-sm text-center text-secondary">
                             Do not have an account?{' '}
                             <a onClick={() => navigate('/signup')} className="cursor-pointer text-primary hover:underline">
-                                Signup
+                                Sign Up
                             </a>
                         </div>
                     </form>
