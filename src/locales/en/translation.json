@@ -15,7 +15,7 @@
     "profile_welcome": {
         "title": "Welcome to Your Profile",
         "description": "Explore your personalized space in the Marvel/DC app. Log in to access your favorite heroes and manage your profile.",
-        "signup_button": "Signup",
-        "login_button": "Login"
+        "signup_button": "Sign Up",
+        "login_button": "Log In"
     }
 }
