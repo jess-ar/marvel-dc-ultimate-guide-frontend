@@ -9,7 +9,7 @@ import LogoDc from '@/components/logos/LogoDc';
 import { loginUser } from '@/services/auth';
 import { setToken } from '@/services/storage'; 
 
-const LoginPage = () => {
+const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
@@ -63,7 +63,7 @@ const LoginPage = () => {
                     <LogoDc className="w-20 md:w-24 lg:w-28" />
                 </div>
 
-                <h2 className="w-full mt-2 mb-12 font-bold text-left text-md text-secondary">Login</h2>
+                <h2 className="w-full mt-2 mb-12 text-2xl text-left font--bold md:text-4xl font-bangers text-secondary">Log In</h2>
                 <div className="relative w-full mb-1">
                     {error && <p className="mb-4 text-center text-primary">{error}</p>}
 
@@ -101,7 +101,7 @@ const LoginPage = () => {
                         <div className="flex justify-center mb-6">
                             <Button
                                 type="submit"
-                                text="Login"
+                                text="Log In"
                                 className="w-full py-2 font-semibold rounded-full text-secondary bg-primary hover:bg-red-700"
                             />
                         </div>
@@ -109,7 +109,7 @@ const LoginPage = () => {
                         <div className="w-full mt-6 mb-4 text-sm text-center text-secondary">
                             Do not have an account?{' '}
                             <a onClick={() => navigate('/signup')} className="cursor-pointer text-primary hover:underline">
-                                Signup
+                                Sign Up
                             </a>
                         </div>
                     </form>
@@ -119,5 +119,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
-
+export default Login;

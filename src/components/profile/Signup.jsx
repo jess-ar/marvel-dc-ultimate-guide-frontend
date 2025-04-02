@@ -8,7 +8,7 @@ import LogoMarvel from '@/components/logos/LogoMarvel';
 import LogoDc from '@/components/logos/LogoDc';
 import { registerUser } from '@/services/auth';
 
-const SignUpPage = () => {
+const SignUp = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -81,7 +81,7 @@ const SignUpPage = () => {
                     <LogoDc className="w-20 md:w-24 lg:w-28" />
                 </div>
 
-                <h2 className="w-full mt-2 mb-12 font-bold text-left text-md text-secondary">Sign up</h2>
+                <h2 className="w-full mt-2 mb-12 text-2xl font-bold text-left md:text-4xl font-bangers text-secondary">Sign Up</h2>
                 <div className="relative w-full mb-1">
                     {error && (
                         <p className="mb-4 text-center text-primary">
@@ -143,7 +143,7 @@ const SignUpPage = () => {
                         <div className="w-full mt-6 mb-4 text-sm text-center text-secondary">
                             Already have an account?{' '}
                             <a onClick={() => navigate('/login')} className="cursor-pointer text-primary hover:underline">
-                                Log in
+                                Log In
                             </a>
                         </div>
                     </form>
@@ -153,4 +153,4 @@ const SignUpPage = () => {
     );
 };
 
-export default SignUpPage;
+export default SignUp;

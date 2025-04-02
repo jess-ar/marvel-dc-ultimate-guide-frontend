@@ -29,10 +29,10 @@ const Search = () => {
             if (response.data.length > 0) {
                 navigate(`/character-details`, { state: { character: response.data[0] } });
             } else {
-                setError("No characters found.");
+                setError('No characters found.');
             }
         } catch (err) {
-            setError(err.response?.data?.message || "An error occurred while searching for characters.");
+            setError(err.response?.data?.message || 'An error occurred while searching for characters.');
         } finally {
             setLoading(false);
             setQuery('');
@@ -44,9 +44,12 @@ const Search = () => {
     };
 
     return (
-        <div className="relative w-full px-1">
-            <form onSubmit={handleSearch} className="flex items-center justify-center w-full">
-                <div className="relative w-full max-w-[150px] sm:max-w-[200px] md:max-w-[300px]">
+        <div className="relative flex items-center">
+            <form
+                onSubmit={handleSearch}
+                className="flex items-center space-x-2"
+            >
+                <div className="relative w-36 lg:w-48">
                     <span className="absolute inset-y-0 left-0 flex items-center pl-2 text-gray-400">
                         <FontAwesomeIcon icon={faSearch} />
                     </span>
@@ -55,13 +58,13 @@ const Search = () => {
                         value={query}
                         onChange={handleInputChange}
                         placeholder="Search character"
-                        className="w-full p-1 pl-8 text-xs text-black bg-gray-200 rounded-md focus:outline-none"
+                        className="w-full px-3 py-1 pl-8 text-xs text-black bg-gray-200 rounded-md focus:outline-none"
                     />
                 </div>
 
                 <button
                     type="submit"
-                    className="ml-2 w-[27px] h-[25.2px] text-white bg-primary rounded-md flex items-center justify-center"
+                    className="flex items-center justify-center w-8 h-6 text-white rounded-md bg-primary"
                     disabled={loading}
                 >
                     <FontAwesomeIcon icon={faArrowRight} />

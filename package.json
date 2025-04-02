@@ -5,20 +5,25 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "rimraf dist && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
-    "clean": "rm -rf dist"
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
     "axios": "^1.7.7",
+    "i18next": "^24.2.2",
+    "i18next-browser-languagedetector": "^8.0.2",
     "jwt-decode": "^4.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-i18next": "^15.4.0",
     "react-router-dom": "^6.26.1"
   },
   "devDependencies": {
@@ -36,8 +41,10 @@
     "globals": "^15.9.0",
     "jsdom": "^25.0.0",
     "postcss": "^8.4.45",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.10",
     "vite": "^5.4.1",
+    "vite-plugin-svgr": "^4.3.0",
     "vitest": "^2.0.5"
   }
 }
