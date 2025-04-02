@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faSearch } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
+import apiClient from '@/services/apiClient';
 import { useNavigate } from 'react-router-dom';
 import ErrorMessage from '@/components/error/ErrorMessage';
 
@@ -24,7 +24,7 @@ const Search = () => {
         setError(null);
 
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/characters/search/?search=${query}`);
+            const response = await apiClient.get(`/characters/search/?search=${query}`);
 
             if (response.data.length > 0) {
                 navigate(`/character-details`, { state: { character: response.data[0] } });
