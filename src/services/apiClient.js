@@ -8,6 +8,8 @@ const apiClient = axios.create({
     },
 });
 
+console.log("🔥 Using this baseURL:", apiClient.defaults.baseURL);
+
 apiClient.interceptors.request.use(
     (config) => {
         const token = getToken(); 
