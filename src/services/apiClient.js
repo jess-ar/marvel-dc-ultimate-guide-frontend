@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getToken } from '@/services/storage';
 
 const apiClient = axios.create({
-    baseURL: import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api/',
+    baseURL: 'https://marvel-dc-ultimate-guide-backend.fly.dev/api/',
     headers: {
         'Content-Type': 'application/json',
     },
@@ -18,9 +18,5 @@ apiClient.interceptors.request.use(
     },
     (error) => Promise.reject(error)
 );
-
-apiClient.get('/characters/search?search=hulk')
-    .then(response => console.log(response.data))
-    .catch(error => console.error('Error fetching data:', error));
 
 export default apiClient;
