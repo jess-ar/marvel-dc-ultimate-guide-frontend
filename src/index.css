@@ -1,12 +1,40 @@
-/* Importa Tailwind */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+:root  {
+  --font-sans: Open Sans, sans-serif;
+  --font-bangers: Bangers, cursive;
+
+  --color-primary: #ed1b24;
+  --color-secondary: #ffffff;
+  --color-terciary: #0c518b;
+  --color-background: #000000;
+  --color-navbar: #21020b;
+  --color-placeholder: #aa9999;
+
+  --background-image-navbarmobile: linear-gradient(
+    180deg,
+    ##0c518b 0%,
+    #002d70 100%
+  );
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
 body {
