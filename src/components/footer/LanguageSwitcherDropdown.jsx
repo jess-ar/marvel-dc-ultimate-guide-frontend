@@ -27,7 +27,7 @@ const LanguageSwitcherDropdown = () => {
     return (
         <div className="relative">
             <button
-                className="flex items-center px-4 py-2 text-sm font-medium text-white bg-red-700 rounded hover:bg-red-600"
+                className="flex items-center px-4 py-2 text-sm font-medium text-white bg-red-700 rounded-xs hover:bg-red-600"
                 onClick={toggleDropdown}
             >
                 <FontAwesomeIcon icon={faGlobe} className="mr-2" />
@@ -36,7 +36,7 @@ const LanguageSwitcherDropdown = () => {
             </button>
 
             {isOpen && (
-                <div className="absolute z-10 w-40 mb-2 bg-gray-800 border border-gray-600 rounded shadow-lg bottom-full">
+                <div className="absolute z-10 w-40 mb-2 bg-gray-800 border border-gray-600 shadow-lg rounded-xs bottom-full">
                     <ul className="py-2">
                         {languages.map((lang) => (
                             <li key={lang.code} className="px-4 py-2 hover:bg-gray-700">
