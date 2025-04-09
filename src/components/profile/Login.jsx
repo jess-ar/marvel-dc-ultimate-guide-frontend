@@ -63,7 +63,7 @@ const Login = () => {
                     <LogoDc className="w-20 md:w-24 lg:w-28" />
                 </div>
 
-                <h2 className="w-full mt-2 mb-12 text-2xl text-left font--bold md:text-4xl font-bangers text-secondary">Log In</h2>
+                <h2 className="w-full mt-2 mb-12 text-2xl text-left font--bold md:text-4xl font-[Bangers] text-secondary">Log In</h2>
                 <div className="relative w-full mb-1">
                     {error && <p className="mb-4 text-center text-primary">{error}</p>}
 
@@ -74,7 +74,7 @@ const Login = () => {
                                 placeholder="Enter your email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full px-4 py-2 border rounded-full shadow-lg bg-secondary text-background placeholder-[#AA9999] focus:outline-none focus:ring-2 focus:ring-primary"
+                                className="w-full px-4 py-2 border rounded-full shadow-lg bg-secondary text-background placeholder-[#AA9999] focus:outline-hidden focus:ring-2 focus:ring-primary"
                                 required
                             />
                         </div>
@@ -85,7 +85,7 @@ const Login = () => {
                                 placeholder="Enter your password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className="w-full px-4 py-2 border rounded-full shadow-lg bg-secondary text-background placeholder-[#AA9999] focus:outline-none focus:ring-2 focus:ring-primary"
+                                className="w-full px-4 py-2 border rounded-full shadow-lg bg-secondary text-background placeholder-[#AA9999] focus:outline-hidden focus:ring-2 focus:ring-primary"
                                 required
                             />
                             <button

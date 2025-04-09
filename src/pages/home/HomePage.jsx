@@ -1,46 +1,51 @@
-import LogoMarvel from '@/components/logos/LogoMarvel';
-import LogoDc from '@/components/logos/LogoDc';
 import { useTranslation } from "react-i18next";
 
 const HomePage = () => {
-    const { t } = useTranslation();
-    
-    return (
-        <div className="relative z-20 flex flex-col items-center justify-between pt-20 pb-4">
-            <h1 className="flex flex-col items-center mt-8 mb-4 text-center text-white font-bangers">
-                <span className="flex items-center space-x-4">
-                    <LogoMarvel />
-                    <span className="mx-2 font-sans text-3xl font-bold sm:text-4xl md:text-4xl">&</span>
-                    <LogoDc />
-                    <span className="mx-1 font-sans text-3xl bold text sm:text-4xl md:text-4xl">:</span>
-                </span>
-                <span className="mt-4 text-3xl sm:text-5xl md:text-5xl">{t("home.title")}</span>
-            </h1>
+  const { t } = useTranslation();
 
-            <div className="max-w-5xl p-4 font-sans text-base leading-relaxed text-left text-white lg:text-lg" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)' }}>
-                <p className="mb-4">{t("home.intro")}</p>
-                <p className="mb-4">{t("home.description1")}</p>
-                <p className="mb-4">{t("home.description2")}</p>
+  return (
+    <div className="flex flex-col items-center w-full">
+      <section className="relative w-full min-h-[70vh] md:min-h-[80vh] overflow-hidden">
+        <img
+          src="https://res.cloudinary.com/dt052lsti/image/upload/v1744235011/7b670ab4fcd0aaa092085733d1b81ec4_snzyox.jpg"
+          alt="Hero Marvel DC"
+          className="absolute inset-0 w-full h-full object-cover brightness-[.4] z-0"
+        />
 
-                <p className="mt-6 text-xs leading-normal lg:text-sm">{t("home.tip")}</p>
-                
-                <section className="flex items-center justify-center mt-8 space-x-4 text-sm lg:text-lg">
-                    <button
-                        className="px-4 py-3 font-bold transition-transform transform bg-red-600 rounded-full shadow-lg md:px-6 md:py-3 hover:bg-red-700 hover:scale-105"
-                        onClick={() => window.location.href = '/marvel'}
-                    >
-                        {t("home.exploreMarvel")}
-                    </button>
-                    <button
-                        className="px-4 py-3 font-bold transition-transform transform bg-[#007DC0] rounded-full shadow-lg md:px-6 md:py-3 hover:bg-[#0C518B] hover:scale-105"
-                        onClick={() => window.location.href = '/dc'}
-                    >
-                        {t("home.exploreDC")}
-                    </button>
-                </section>
+        {/* text hero */}
+        <div className="relative z-10 flex items-start justify-end w-full h-full px-4 pt-10 text-white md:px-10 md:pt-16">
+          <div className="max-w-xs text-right sm:max-w-sm md:max-w-md lg:max-w-lg">
+            <div className="flex items-center justify-end gap-2 mb-2">
+              <p className="text-3xl sm:text-4xl md:text-5xl font-[Bangers]">Marvel</p>
+              <span className="text-3xl font-bold sm:text-3xl">&</span>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-[Bangers]">DC</p>
+              <span className="text-3xl font-bold sm:text-3xl">:</span>
             </div>
+            <h1 className="text-4xl sm:text-4xl md:text-5xl font-[Bangers]">
+              {t("home.title")}
+            </h1>
+          </div>
         </div>
-    );
+      </section>
+      
+      <div className="relative z-10 max-w-6xl px-4 py-12 font-sans text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
+        <p className="mb-8 text-xl font-semibold leading-relaxed text-center sm:text-2xl md:text-left">
+          {t("home.intro")}
+        </p>
+        <div className="grid grid-cols-1 gap-8 text-base leading-relaxed md:grid-cols-2 lg:text-lg">
+          <div>
+            <p className="mb-4">{t("home.description1")}</p>
+          </div>
+          <div>
+            <p className="mb-4">{t("home.description2")}</p>
+          </div>
+        </div>
+        <p className="mt-6 text-xs italic text-center text-gray-300 lg:text-sm md:text-left">
+          {t("home.tip")}
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default HomePage;

@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 
 const ErrorMessage = ({ message, onClose }) => {
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
             <div className="relative flex flex-col items-center justify-center p-8 space-y-6 rounded-lg shadow-lg bg-background">
                 <button 
                     onClick={onClose} 
-                    className="absolute text-2xl text-white top-4 right-4 focus:outline-none"
+                    className="absolute text-2xl text-white top-4 right-4 focus:outline-hidden"
                 >
                     &times;
                 </button>
