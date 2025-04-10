@@ -43,6 +43,45 @@ const GalleryPage = () => {
     },
   ];
 
+  const wonderWomanImages = [
+    {
+      src: 'https://res.cloudinary.com/dt052lsti/image/upload/v1744313572/83a874c8921dd18cb881d3596ff87002_ytb9w7.jpg',
+      alt: 'Wonder-Woman 1',
+    },
+    {
+      src: 'https://res.cloudinary.com/dt052lsti/image/upload/v1744313571/3b60b7f0f545972ce842b0d61f1d0253_zm7avy.jpg',
+      alt: 'Wonder-Woman 2',
+    },
+    {
+      src: 'https://res.cloudinary.com/dt052lsti/image/upload/v1744313386/a8f6d7fa28ba939fbdb5fa857882ea48_g7uecc.jpg',
+      alt: 'Wonder-Woman 3',
+    },
+    {
+      src: 'https://res.cloudinary.com/dt052lsti/image/upload/v1744313385/88783dfd6892d48cb0683d1d7ca235fc_vi6tcm.jpg',
+      alt: 'Wonder-Woman 4',
+    },
+    {
+      src: 'https://res.cloudinary.com/dt052lsti/image/upload/v1744313384/86e9edf3af727151f04ff061616c50ff_mmbrcl.jpg',
+      alt: 'Wonder-Woman 5',
+    },
+    {
+      src: 'https://res.cloudinary.com/dt052lsti/image/upload/v1744313383/40c21ad7cffaab4da4bad27db51b21fa_jiarud.jpg',
+      alt: 'Wonder-Woman 6',
+    },
+    {
+      src: 'https://res.cloudinary.com/dt052lsti/image/upload/v1744313381/2e80f215de9f415ca79f8ee7a9eba534_ku9zdp.jpg',
+      alt: 'Wonder-Woman 7',
+    },
+    {
+      src: 'https://res.cloudinary.com/dt052lsti/image/upload/v1744313380/155aeec5ca3ca7b2fd2458080ff61424_mwyvap.jpg',
+      alt: 'Wonder-Woman 8',
+    },
+    {
+      src: 'https://res.cloudinary.com/dt052lsti/image/upload/v1744313711/6fd55ee5b39b11f7dc22064a4beb374d_huhxep.jpg',
+      alt: 'Wonder-Woman 9',
+    },
+  ];
+
   useEffect(() => {
     const timeout = setTimeout(() => setShowGallery(true), 100);
     return () => clearTimeout(timeout);
@@ -60,6 +99,13 @@ const GalleryPage = () => {
         }`}
       >
         <GalleryHover title="Spider-Man" images={spiderManImages} />
+      </div>
+      <div
+        className={`transition-all duration-700 ease-out ${
+          showGallery ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+        }`}
+      >
+        <GalleryHover title="Wonder-Woman" images={wonderWomanImages} />
       </div>
     </div>
   );
