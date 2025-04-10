@@ -10,7 +10,7 @@ const PublicRoute = ({ isFluid = false }) => {
   return (
     <div className="flex flex-col min-h-screen bg-[--color-background] text-[--color-secondary]">
       <Navbar />
-      <main className={`grow px-4 py-8 ${shouldBeFluid ? 'w-full' : 'max-w-5xl mx-auto'}`}>
+      <main className={`grow py-8 ${shouldBeFluid ? 'w-full' : 'max-w-5xl mx-auto'}`}>
         <Outlet />
       </main>
       <Footer />
